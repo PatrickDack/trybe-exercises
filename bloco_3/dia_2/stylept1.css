@@ -1,0 +1,12 @@
+h1 {
+    font-size: 65px;
+    color: orange;       
+}
+
+#ulcolors{
+    background-color: rgb(240, 158, 110);
+}
+
+.bgmain{
+    background-color: rgb(235, 130, 130);
+}
