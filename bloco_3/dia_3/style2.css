@@ -1,0 +1,17 @@
+.super-mario {
+    width: 100px;
+    position: absolute;
+    z-index: 1;
+}
+
+.goomba {
+    width: 50px;
+    position: absolute;
+    z-index: 2;
+    top: 200px;
+    left: 100px;
+}
+
+.bowser {
+    width: 200px;
+}
