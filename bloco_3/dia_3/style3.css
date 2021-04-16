@@ -12,9 +12,11 @@ li:hover {
 }
 
 li:active {
-   font-family: sans-serif; 
+   font-family: sans-serif;
+   transition: all;
 }
 
 li {
     list-style: none;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
