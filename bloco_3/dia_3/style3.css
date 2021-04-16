@@ -1,0 +1,12 @@
+h1, p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li:hover {
+    background-color: bisque;
+}
