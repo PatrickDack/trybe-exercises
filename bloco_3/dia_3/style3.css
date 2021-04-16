@@ -10,3 +10,7 @@ a {
 li:hover {
     background-color: bisque;
 }
+
+li:active {
+   font-family: sans-serif; 
+}
