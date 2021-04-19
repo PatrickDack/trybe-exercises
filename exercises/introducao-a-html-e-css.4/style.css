@@ -5,6 +5,11 @@
     margin: 0;
 }
 
+body {
+    background-color: black;
+    color: white;
+}
+
 header {
     background-image: url('./images/ft-table.jpg');
     background-size: cover;
@@ -16,10 +21,12 @@ header {
 
 .h {
     text-align: center;
+    color: aqua;
+    padding: 15px;
 }
 
 h1 {
-    color: rgb(16, 204, 211);
+    color: aqua;
     font-family: sans-serif;
     font-size: 60px;
     text-align: left;
@@ -28,8 +35,15 @@ h1 {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
     font-weight: 1000;
-    
 
+}
+
+h2{
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 25px;
 }
 
 .internal-links {
@@ -55,7 +69,32 @@ h1 {
 }
 
 .info {
+   
+}
+
+.default-section {
     max-width: 60%;
     margin: auto;
     text-align: left;
+}
+
+.classification{ 
+    
+}
+
+.img-classification {
+    width: 200px;
+    float: right;
+    margin-left: 150px;
+    margin-top: 30px;
+    
+}
+
+.classification-list {
+    margin-top: 48px;
+    
+}
+
+li{
+    text-align: right;
 }
