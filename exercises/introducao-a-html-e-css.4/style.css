@@ -2,4 +2,43 @@
     list-style-type: none;
     text-decoration: none;
     color: currentColor;
+    margin: 0;
+}
+
+header {
+    background-image: url('./images/ft-table.jpg');
+    background-size: cover;
+    background-position: 30% 30%;
+    margin: auto;
+    height: 500px;
+
+}
+
+
+
+.h {
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 60px;
+    text-align: left;
+}
+
+.internal-links {
+    text-align: center;
+
+}
+
+.internal-links li {
+    display: inline-block;
+}
+
+.info {
+    max-width: 60%;
+    margin: auto;
+    text-align: left;
 }
