@@ -8,17 +8,10 @@
 header {
     background-image: url('./images/ft-table.jpg');
     background-size: cover;
-    background-position: 30% 30%;
+    background-position: 1% 10%;
     margin: auto;
     height: 500px;
 
-}
-
-
-
-.h {
-    text-align: center;
-    margin: auto;
 }
 
 h1 {
@@ -26,15 +19,31 @@ h1 {
     font-family: sans-serif;
     font-size: 60px;
     text-align: left;
+    margin-left: 50px;
+    max-width: 500px;
+    
+
 }
 
 .internal-links {
-    text-align: center;
+    
+    
 
+}
+
+.internal-links ul {
+    margin-top: 230px;
 }
 
 .internal-links li {
     display: inline-block;
+    text-align: left;
+    font-size: 25px;
+    font-family: sans-serif;
+    color: white;
+    background-color: green;
+    padding: 7px;
+    border-radius: 10%;
 }
 
 .info {
