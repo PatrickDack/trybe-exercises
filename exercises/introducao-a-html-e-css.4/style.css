@@ -46,10 +46,8 @@ h3 {
     font-size: 25px;
 }
 
-.internal-links {
-    
-    
-
+.h {
+    clear: both;
 }
 
 .internal-links ul {
@@ -68,33 +66,44 @@ h3 {
     margin-right: 10px;
 }
 
-.info {
-   
-}
-
-.default-section {
-    max-width: 60%;
-    margin: auto;
-    text-align: left;
-}
-
-.classification{ 
-    
-}
-
 .img-classification {
-    width: 200px;
-    float: right;
-    margin-left: 150px;
-    margin-top: 30px;
     
+    float: left;
+    max-width: 36%;
+    margin: auto;
+    margin-left: 32%;
+}
+
+.text {
+    max-width: 60%;
+    text-align: left;
+    margin: auto;
+    
+}
+
+div {
+    padding: 30px;
+}
+
+.ft-classification {
+    width: 200px;
+    float: left;
+    margin-top: 135px;
+    padding: 20px;
 }
 
 .classification-list {
-    margin-top: 48px;
-    
+   z-index: 0;
+   position: absolute;
+   margin-top: 35px;
 }
 
-li{
-    text-align: right;
+.aside {
+    font-size: 30px;
+    max-width: 20%;
+    text-align: center;
+    position: absolute;
+    
+    
+
 }
