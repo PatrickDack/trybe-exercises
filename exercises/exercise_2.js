@@ -1,6 +1,6 @@
-let n = 23;
+let n = 5;
 let out = '';
 for (let index0 = 0; index0 < n; index0 += 1) {
-    out += '*'
+    out += '*';
     console.log(out);
     }
