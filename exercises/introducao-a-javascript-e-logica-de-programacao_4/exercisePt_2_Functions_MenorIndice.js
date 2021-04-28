@@ -1,11 +1,11 @@
 function menorIndice (array) {
-    let maiorIndice = 0;
+    let menorIndice = 0;
     for (index in array){
         if (array[maiorIndice] > array[index]){
-            maiorIndice = index;
+            menorIndice = index;
         };
     };
-    return maiorIndice;
+    return menorIndice;
  };
  
  let numbers = [2, 4, 6, 7, 10, 0, -3];
