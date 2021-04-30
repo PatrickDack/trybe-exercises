@@ -86,6 +86,17 @@
       imgLeft.class = 'small-image';
       imgLeft.src = 'https://picsum.photos/200';
 
+      let unorderedList = document.createElement('ul');
+      document.querySelector('.right-content').appendChild(unorderedList);
+
+      let numberStringList = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      
+      for (let index = 0; index < numberStringList.length; index += 1) {
+        let itemList = document.createElement('li');
+        itemList.innerHTML = numberStringList[index];
+        document.querySelector('ul').appendChild(itemList);
+      }
+
 
 
 
