@@ -98,6 +98,17 @@
         document.querySelector('ul').appendChild(itemList);
       }
 
+      
+      for (let index = 0; index < 3; index += 1) {
+        let h3Tag = document.createElement('h3');    
+        let h3Tag1 = h3Tag2 = h3Tag;
+        document.querySelector('.main-content').appendChild(h3Tag);
+        h3Tag.className = 'description';
+        document.querySelector('.main-content').appendChild(h3Tag1);
+        h3Tag1.className = 'description';
+        document.querySelector('.main-content').appendChild(h3Tag2);
+        h3Tag2.className = 'description';
+      }
 
 
 
