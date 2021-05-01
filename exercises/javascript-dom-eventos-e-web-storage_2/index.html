@@ -60,6 +60,7 @@
       let hText = document.createElement('h1');
       document.body.appendChild(hText);
       hText.innerHTML = ('Exercício 5.2 - JavaScript DOM');
+      hText.className = 'title';
 
       let div = document.createElement('div');
       document.body.appendChild(div);
@@ -83,7 +84,7 @@
 
       let imgLeft = document.createElement('img');
       document.querySelector('.left-content').appendChild(imgLeft);
-      imgLeft.class = 'small-image';
+      imgLeft.className = 'small-image';
       imgLeft.src = 'https://picsum.photos/200';
 
       let unorderedList = document.createElement('ul');
@@ -96,6 +97,8 @@
         itemList.innerHTML = numberStringList[index];
         document.querySelector('ul').appendChild(itemList);
       }
+
+
 
 
 
