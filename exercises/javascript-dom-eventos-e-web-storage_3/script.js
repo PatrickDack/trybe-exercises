@@ -14,6 +14,7 @@ function createDaysOfTheWeek() {
   createDaysOfTheWeek();
   
   // Escreva seu código abaixo.
+  //Exercicio 1
   const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   let daysMonth = document.getElementById('days');
   for (let index = 0; index < dezDaysList.length; index += 1) {
@@ -27,6 +28,16 @@ function createDaysOfTheWeek() {
         days.className = 'day';
     }
     daysMonth.appendChild(days);
-
   }
+
+  //Exercicio 2
+  function createButton (str) {
+    let button = document.createElement('button');
+    button.innerText = str;
+    let btnConteiner = document.querySelector('.buttons-container');
+    btnConteiner.appendChild(button);
+  }
+  createButton('Feriados');
+
+
   
