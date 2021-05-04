@@ -27,3 +27,14 @@ btnTextColor.addEventListener('click', () => {
         text.style.color ='red';
     }
 })
+
+//Altera o tamanho da fonte
+btnFontSize.addEventListener('click', () => {
+    let text = document.querySelector('#main-text');
+    if (text.style.fontSize !== '20px') {
+        text.style.fontSize = '20px';
+    } else {
+        text.style.fontSize ='16px';
+    }
+})
+
