@@ -102,4 +102,12 @@ function createTasks (toDo) {
   myTasks.appendChild(task);
 }
 
+//Exercicio 8
+function legend (cor) {
+  let createDiv = document.createElement('div');
+  createDiv.className = 'task';
+  createDiv.style.backgroundColor = cor;
+  document.querySelector('.my-tasks').appendChild(createDiv);
+}
   
+legend('green');
