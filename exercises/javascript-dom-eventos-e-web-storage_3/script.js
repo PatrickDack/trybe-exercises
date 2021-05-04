@@ -20,9 +20,12 @@ function createDaysOfTheWeek() {
   for (let index = 0; index < dezDaysList.length; index += 1) {
     let days = document.createElement('li');
     days.innerText = dezDaysList[index];
-    if (dezDaysList[index] == 24 || dezDaysList[index] == 25 || dezDaysList[index] == 31) {
+    if(dezDaysList[index] == 25){
+        days.className = 'day holyday friday';
+    }
+    else if (dezDaysList[index] == 24 || dezDaysList[index] == 31) {
         days.className = 'day holyday'
-    } else if (dezDaysList[index] == 4 || dezDaysList[index] == 11 || dezDaysList[index] == 18 || dezDaysList[index] == 25) {
+    } else if (dezDaysList[index] == 4 || dezDaysList[index] == 11 || dezDaysList[index] == 18) {
         days.className = 'day friday';
     } else {
         days.className = 'day';
@@ -32,22 +35,63 @@ function createDaysOfTheWeek() {
 
   //Exercicio 2
   let buttonCreator = document.createElement('button');
-  function createButton (str) {   
-    buttonCreator.innerText = str;
+  function createButton (str, btn, creator) {   
+    creator.innerText = str;
     let btnConteiner = document.querySelector('.buttons-container');
-    btnConteiner.appendChild(buttonCreator);
+    btnConteiner.appendChild(btn);
   }
-  createButton('Feriados');
+  buttonCreator.id = 'btn-holiday'
+  createButton('Feriados', buttonCreator, buttonCreator);
 
   //Exercicio 3
   let holyday = document.querySelectorAll('.holyday');
   let button = document.querySelector('.buttons-container button');
   button.addEventListener('click', function () {
     for (let index = 0; index < holyday.length; index += 1) {
-        holyday[index].style.backgroundColor = 'lightGreen';
+        if (holyday[index].style.backgroundColor === 'lightgreen') {
+            holyday[index].style.backgroundColor = 'rgb(238,238,238)';
+        } else {
+            holyday[index].style.backgroundColor = 'lightgreen';
+        }
     }
   })
 
 
+//Exercicio 4
+let buttonCreator2 = document.createElement('button');
+buttonCreator2.id = 'btn-friday';
+  createButton('Sexta-Feira', buttonCreator2, buttonCreator2);
+
+//Exercicio 5
+let fridayButton = document.getElementById('btn-friday');
+let fridayDayArray = [4, 11, 24, 25];
+fridayButton.addEventListener('click', function () {
+    let fridayDay = document.querySelectorAll('.friday');
+    for (let index = 0; index < fridayDay.length; index += 1) {
+        if (fridayDay[index].innerText !== 'Sextouu') {
+            fridayDay[index].innerText = 'Sextouu';
+        } else {
+            fridayDay[index].innerText = fridayDayArray[index];
+        }
+    }
+})
+
+//Exercicio 6
+let day = document.getElementById('days');
+function zoomIn () {
+  day.addEventListener('mouseover', function (event) {
+    event.target.style.fontSize = '30px';
+    event.target.style.fontWeight = '600';
+  })
+}
+zoomIn();
+ 
+function zoomOut () {
+  day.addEventListener('mouseout', event => {
+    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = '200';
+  })
+}
+zoomOut();
 
   
