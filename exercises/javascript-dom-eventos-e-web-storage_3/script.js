@@ -101,13 +101,41 @@ function createTasks (toDo) {
   task.innerHTML = toDo;
   myTasks.appendChild(task);
 }
+createTasks('Estudar');
 
 //Exercicio 8
+let createDiv = document.createElement('div');
 function legend (cor) {
-  let createDiv = document.createElement('div');
   createDiv.className = 'task';
   createDiv.style.backgroundColor = cor;
   document.querySelector('.my-tasks').appendChild(createDiv);
 }
   
 legend('green');
+
+//Exercicio 9
+let selcTask = document.querySelector('.task');
+function selectedTasks () {
+  selcTask.addEventListener('click', () => {
+    if (selcTask.className === 'task selected') {
+      selcTask.className = 'task';
+    } else {
+      selcTask.className = 'task selected';
+    }
+  })
+}
+selectedTasks();
+
+//Exercicio 10
+function atributesColorTaskToDay () {
+  let days = document.getElementById('days');
+  days.addEventListener('click', event => {
+    if (selcTask.className === 'task selected' && event.target.style.color !== 'green') {
+      event.target.style.color = 'green';
+    } else {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  })
+
+}
+atributesColorTaskToDay();
