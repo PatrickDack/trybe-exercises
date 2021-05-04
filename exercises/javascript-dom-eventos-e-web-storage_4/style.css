@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(31, 31, 31);
+    font-family: sans-serif;
+}
+
+#main-title {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 45px;
+    color: white;
+}
+
+#sec {
+    text-align: center;
+}
+
+.text-conteiner {
+    width: 60%;
+    text-align: left;
+    display: inline-block;
+    background-color: aliceblue;
+    padding: 50px;
+}
+
+#main-text {
+   
+    
+}
+
+.buttons-conteiner {
+    text-align: center;
+    padding: 20px;
+}
+
+.btn {
+    border: 20px;
+    margin: 10px;
+    font-size: 17px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
