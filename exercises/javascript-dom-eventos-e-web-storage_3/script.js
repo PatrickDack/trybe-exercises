@@ -21,7 +21,7 @@ function createDaysOfTheWeek() {
     let days = document.createElement('li');
     days.innerText = dezDaysList[index];
     if (dezDaysList[index] == 24 || dezDaysList[index] == 25 || dezDaysList[index] == 31) {
-        days.className = 'day holiday'
+        days.className = 'day holyday'
     } else if (dezDaysList[index] == 4 || dezDaysList[index] == 11 || dezDaysList[index] == 18 || dezDaysList[index] == 25) {
         days.className = 'day friday';
     } else {
@@ -31,13 +31,23 @@ function createDaysOfTheWeek() {
   }
 
   //Exercicio 2
-  function createButton (str) {
-    let button = document.createElement('button');
-    button.innerText = str;
+  let buttonCreator = document.createElement('button');
+  function createButton (str) {   
+    buttonCreator.innerText = str;
     let btnConteiner = document.querySelector('.buttons-container');
-    btnConteiner.appendChild(button);
+    btnConteiner.appendChild(buttonCreator);
   }
   createButton('Feriados');
+
+  //Exercicio 3
+  let holyday = document.querySelectorAll('.holyday');
+  let button = document.querySelector('.buttons-container button');
+  button.addEventListener('click', function () {
+    for (let index = 0; index < holyday.length; index += 1) {
+        holyday[index].style.backgroundColor = 'lightGreen';
+    }
+  })
+
 
 
   
