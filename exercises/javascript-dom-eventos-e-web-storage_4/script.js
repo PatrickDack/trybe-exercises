@@ -38,3 +38,13 @@ btnFontSize.addEventListener('click', () => {
     }
 })
 
+//Altera o espaçamento entre as linhas
+btnLineSpace.addEventListener('click', () => {
+    let text = document.querySelector('#main-text');
+    if (text.style.lineHeight !== '30px') {
+        text.style.lineHeight= '30px';
+    } else {
+        text.style.lineHeight ='18px';
+    }
+})
+
