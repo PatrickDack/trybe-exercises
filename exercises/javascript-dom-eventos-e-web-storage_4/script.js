@@ -6,7 +6,7 @@ const btnLineSpace = document.getElementById('btn-line-space');
 const btnFontType = document.getElementById('btn-font-type');
 
 //Altera a cor de fundo do texto e a cor do texto.
-btnBackground.addEventListener('click', event => {
+btnBackground.addEventListener('click', () => {
     let bg = document.querySelector('.text-conteiner');
     let text = document.querySelector('#main-text');
     if (bg.style.backgroundColor !== 'black' && text.style.color !== 'white') {
@@ -19,3 +19,11 @@ btnBackground.addEventListener('click', event => {
 })
 
 //Altera a cor do texto
+btnTextColor.addEventListener('click', () => {
+    let text = document.querySelector('#main-text');
+    if (text.style.color !== 'yellow') {
+        text.style.color = 'yellow';
+    } else {
+        text.style.color ='red';
+    }
+})
