@@ -94,4 +94,12 @@ function zoomOut () {
 }
 zoomOut();
 
+//Exercicio 7
+let task = document.createElement('span');
+function createTasks (toDo) {
+  const myTasks = document.querySelector('.my-tasks');
+  task.innerHTML = toDo;
+  myTasks.appendChild(task);
+}
+
   
