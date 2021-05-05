@@ -48,3 +48,14 @@ btnLineSpace.addEventListener('click', () => {
     }
 })
 
+//Altera o tipo de fonte do texto 
+btnFontType.addEventListener('click', () => {
+    let text = document.querySelector('#main-text');
+    if (text.style.fontFamily !== 'monospace') {
+        text.style.fontFamily = 'monospace';
+    } else {
+        text.style.fontFamily = 'sans serif';
+    }
+})
+
+
