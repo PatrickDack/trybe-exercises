@@ -16,6 +16,8 @@ btnBackground.addEventListener('click', () => {
         bg.style.backgroundColor = 'white';
         text.style.color = 'black';
     }
+    localStorage.setItem('text', text.style.color);
+    localStorage.setItem('bg', bg.style.backgroundColor);
 })
 
 //Altera a cor do texto
@@ -26,6 +28,7 @@ btnTextColor.addEventListener('click', () => {
     } else {
         text.style.color ='red';
     }
+    localStorage.setItem('text', text.style.color);
 })
 
 //Altera o tamanho da fonte
@@ -36,6 +39,7 @@ btnFontSize.addEventListener('click', () => {
     } else {
         text.style.fontSize ='16px';
     }
+    localStorage.setItem('font', text.style.fontSize);
 })
 
 //Altera o espaçamento entre as linhas
@@ -46,6 +50,7 @@ btnLineSpace.addEventListener('click', () => {
     } else {
         text.style.lineHeight ='18px';
     }
+    localStorage.setItem('space', text.style.lineHeight);
 })
 
 //Altera o tipo de fonte do texto 
@@ -56,6 +61,24 @@ btnFontType.addEventListener('click', () => {
     } else {
         text.style.fontFamily = 'sans serif';
     }
+    localStorage.setItem('font-type', text.style.fontFamily);
 })
+
+//Salvar preferencias
+if (localStorage.getItem('bg') !== null) {
+    document.querySelector('.text-conteiner').style.backgroundColor = localStorage.getItem('bg');    
+}
+if (localStorage.getItem('space') !== null) {
+    document.querySelector('#main-text').style.backgroundColor = localStorage.getItem('space');
+}
+if (localStorage.getItem('font') !== null) {
+    document.querySelector('#main-text').style.fontSize = localStorage.getItem('font');
+}
+if (localStorage.getItem('text') !== null) {
+    document.querySelector('#main-text').style.color = localStorage.getItem('text');
+}
+if (localStorage.getItem('font-type') !== null) {
+    document.querySelector('#main-text').style.fontFamily = localStorage.getItem('font-type');
+}
 
 
