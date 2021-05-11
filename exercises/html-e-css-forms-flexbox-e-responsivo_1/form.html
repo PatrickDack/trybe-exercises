@@ -9,6 +9,7 @@
 </head>
 <body>
   <fieldset>
+    <legend>Dados Pessoais</legend>
     <label for="full-name">Nome:</label>
     <input type="text" maxlength="40" required id="full-name" placeholder="Digite o Seu Nome">
     <br>
@@ -21,10 +22,22 @@
     <label for="city">Cidade:</label>
     <input type="text" maxlength="28" name="cidade" id="city" placeholder="Digite a cidade" required>
     <br>
-    <label for="">Estado:</label>
-    <select name="state" id="state">
-
+    <label for="state">Estado:</label>
+    <select name="state" id="state" required>
     </select>
+    <br>
+    <p>Tipo de Moradia:</p>
+    <label for="type-1">
+      <input type="radio" name="livehood" id="type-1" required checked>Casa
+    </label>
+    <label for="type-2">
+      <input type="radio" name="livehood" id="type-2" required>Apartamento
+    </label>
+  </fieldset>
+  <fieldset>
+    <legend>Dados do Último Emprego</legend>
+    <label for="">Resumo do Curriculo</label>
+    <textarea name="curriculom-data" id="text-area" cols="30" rows="10" maxlength="1000"></textarea>
   </fieldset>
   <script src="script.js"></script>
 </body>
