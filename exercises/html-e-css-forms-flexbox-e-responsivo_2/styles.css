@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+body {
+  color: rgb(43, 43, 43);
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(27, 27, 27);
+}
+
+input[type=text], input[type=email] {
+  width: 100%;
+  display: inline-block;
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+#title {
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.line-content {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.content {
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 3px;
+  background-color: rgb(44, 44, 44);
+}
+
+#button-conteiner {
+  text-align: center;
+}

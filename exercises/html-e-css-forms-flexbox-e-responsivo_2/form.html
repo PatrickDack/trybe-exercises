@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 id="title">Formulario para Cadastro de Curriculo</h1>
+  <form action="">
+    <fieldset class="content">
+      <legend>Dados Pessoais</legend>
+      <div class="line-content">
+        <label for="full-name">Nome:</label>
+        <input type="text" maxlength="40" required id="full-name" placeholder="Digite o Seu Nome">
+      </div>
+      <div class="line-content">
+        <label for="email">E-mail:</label>
+        <input type="email" maxlength="40" required id="email" placeholder="Digite o Seu E-mail">
+      </div>
+      <div class="line-content">
+        <label for="cpf">CPF:</label>
+        <input type="text" maxlength="11" required id="cpf" placeholder="Digite o Seu CPF">
+      </div>
+      <div class="line-content">
+        <label for="city">Cidade:</label>
+        <input type="text" maxlength="28" name="cidade" id="city" placeholder="Digite a cidade" required>
+      </div>
+      <div class="line-content">
+        <label for="state">Estado:</label>
+        <select name="state" id="state" required></select>
+      </div>
+      <div class="line-content">
+        <p>Tipo de Moradia:</p>
+        <label for="type-1">
+        <input type="radio" name="livehood" id="type-1" value="house" required checked>Casa
+        </label>
+        <label for="type-2">
+        <input type="radio" name="livehood" id="type-2" value="apartment" required>Apartamento
+        </label>
+      </div>
+    </fieldset>
+    <fieldset class="content">
+      <legend>Dados do Último Emprego</legend>
+      <div class="line-content">
+        <label for="text-area">Resumo do Curriculo</label>
+        <textarea name="curriculom-data" id="text-area" cols="94" rows="20" maxlength="1000" required placeholder="Dê uma breve descrição do seu curriculo até 1000 caracteres."></textarea>
+      </div>
+      <div class="line-content">
+        <label for="job">Cargo:</label>
+        <input type="text" name="Cargo" id="job" maxlength="40" required placeholder="Último Cargo">
+      </div>
+      <div class="line-content">
+        <label for="last-job-descript">Dscrição do Cargo</label>
+        <input type="text" name="descricao-do-cargo" id="last-job-descript" maxlength="500" required>
+      </div>
+      <div class="line-content">
+        <label for="date">Data de Inicio</label>
+        <input type="text" name="data" id="date" max="2021" min="1" required>
+      </div>
+    </fieldset>
+    <div id="button-conteiner">
+      <button class="submit-button" type="submit">Enviar</button>
+      <button id="clear-button" type="button">Limpar</button>
+    </div>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
