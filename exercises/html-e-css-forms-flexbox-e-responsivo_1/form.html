@@ -36,8 +36,17 @@
   </fieldset>
   <fieldset>
     <legend>Dados do Último Emprego</legend>
-    <label for="">Resumo do Curriculo</label>
-    <textarea name="curriculom-data" id="text-area" cols="30" rows="10" maxlength="1000"></textarea>
+    <label for="text-area">Resumo do Curriculo</label>
+    <textarea name="curriculom-data" id="text-area" cols="30" rows="10" maxlength="1000" required placeholder="Dê uma breve descrição do seu curriculo até 1000 linhas."></textarea>
+    <br>
+    <label for="job">Cargo:</label>
+    <input type="text" name="Cargo" id="job" maxlength="40" required placeholder="Último Cargo">
+    <br>
+    <label for="last-job-descript">Dscrição do Cargo</label>
+    <input type="text" name="descricao-do-cargo" id="last-job-descript" maxlength="500" required>
+    <br>
+    <label for="date">Data de Inicio</label>
+    <input type="text" name="data" id="date" max="2021" min="1" required>
   </fieldset>
   <script src="script.js"></script>
 </body>
