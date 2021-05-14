@@ -20,6 +20,10 @@ body {
   flex-basis: 268px;
 }
 
+.logo-container {
+  order: -1;
+}
+
 .menu-container {
   display: flex;
   flex-basis: 500px;
