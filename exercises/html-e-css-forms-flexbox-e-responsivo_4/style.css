@@ -77,9 +77,12 @@ body {
 }
 
 .aside-container {
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   flex-basis: 350px;
+  align-content: center;
+  flex-grow: 1;
   margin: 20px;
 }
 
