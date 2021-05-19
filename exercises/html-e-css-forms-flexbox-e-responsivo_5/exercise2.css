@@ -80,3 +80,27 @@ footer {
   padding: 15px;
   text-align: center;
 }
+
+@media screen and (min-width: 1025px) {
+  .main-content {
+    width: 50%;
+    text-align: justify;
+  }
+
+  .cover {
+    height: 300px;
+  }
+
+  .aside-one, .aside-two {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+
+  .asides {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+  }
+}
