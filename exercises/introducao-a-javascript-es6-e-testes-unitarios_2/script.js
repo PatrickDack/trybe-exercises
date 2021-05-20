@@ -45,7 +45,7 @@ customerInfo(order);
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
-
+  console.log(`Olá ${order.name}, o tatal do seu pedido de muzzarella, calabresa e Coca-Cola Zero é R$ ${order.order.pizza.margherita.price * 2},00.`)
 }
-
+console.log('===========================');
 orderModifier(order);
