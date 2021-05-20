@@ -26,3 +26,6 @@ console.log(lesson2);
 
 const listKeys = obj => console.log(Object.keys(obj));
 listKeys(lesson3);
+
+const listValues = obj => console.log(Object.values(obj));
+listValues(lesson3);
