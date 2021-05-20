@@ -29,3 +29,6 @@ listKeys(lesson3);
 
 const listValues = obj => console.log(Object.values(obj));
 listValues(lesson3);
+
+const objectLength = obj => console.log(Object.keys(obj).length);
+objectLength(lesson1);
