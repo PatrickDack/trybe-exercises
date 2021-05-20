@@ -21,6 +21,8 @@ const lesson3 = {
 const addMorningTurn = (obj, key, value) => {
   obj[key] = value;
 }
-
 addMorningTurn(lesson2, 'turno', 'manhã');
 console.log(lesson2);
+
+const listKeys = obj => console.log(Object.keys(obj));
+listKeys(lesson3);
