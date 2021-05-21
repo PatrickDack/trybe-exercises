@@ -54,5 +54,7 @@ const getValueByNumber = (obj, index) => {
   const values = Object.values(obj);
   return values[index];
 }
-
 console.log(getValueByNumber(lesson2, 0));
+
+const verifyPair = (obj, key, value) => obj[key] === value ? true : false;
+console.log(verifyPair(lesson3, 'turno', 'noite'));
