@@ -22,34 +22,55 @@ const battleMembers = { mage, warrior, dragon };
 
 const damage = (minDamage, maxDamage) => Math.round(Math.random() * (maxDamage - minDamage) + minDamage);
 
-const dragonDamage = (dragon) => {
+const dragonDamage = () => {
   const minDamage = 15;
   const maxDamage = dragon.strength;
   const dmg = damage(minDamage, maxDamage);
-  // if (dmg >= 45) {
-  //   return `${dmg} Critical Hit!!!`;
-  // }
   return dmg;
 }
 
-const warriorDamage = (warrior) => {
+const warriorDamage = () => {
   const minDamage = warrior.strength;
   const maxDamage = warrior.strength * warrior.weaponDmg;
   const dmg = damage(minDamage, maxDamage);
   return dmg;
-  // if (dmg >= 55) {
-  //   return `${dmg} Critical Hit!!!`;
-  // }
 }
 
-const mageDamage = (mage) => {
+const mageDamage = () => {
   const minDamage = mage.intelligence;
   const maxDamage = mage.intelligence * 2;
   const dmg = damage(minDamage, maxDamage);
-  // if (dmg > 80) {
-  //   return `${dmg} Critical Hit!!!`;
-  // }
-  return { damage: dmg, spentMana: 15};
+  const lowMana = { damage: 'Não possui mana suficiente', spentMana: 0}
+  if (mage.mana > 15) {
+  const resumeMage = { damage: dmg, spentMana: 15};
+  return resumeMage;
+  }
+  return lowMana;
 }
 
-console.log(dragonDamage(dragon), warriorDamage(warrior), mageDamage(mage));
+// Parte 2 do exercicio
+
+const gameActions = {
+  warriorTurn: () => {
+    warrior.damage = warriorDamage();
+    dragon.healthPoints -= warriorDamage();
+  },
+  mageTurn: () => {
+    mage.damage = mageDamage().damage;
+    mage.mana -= mageDamage().spentMana;
+    dragon.healthPoints -= mageDamage().damage;
+  },
+  dragonTurn: () => {
+    dragon.damage = dragonDamage();
+    warrior.healthPoints -= dragonDamage();
+    mage.healthPoints -= dragonDamage();
+  },
+  resumeBattle: () => {
+    console.log(battleMembers);
+  }
+};
+
+gameActions.warriorTurn();
+gameActions.mageTurn();
+gameActions.dragonTurn();
+gameActions.resumeBattle();
