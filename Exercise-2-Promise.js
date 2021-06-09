@@ -1,4 +1,4 @@
-const promisse = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
   const ranNumArr = [];
   const dividers = [2, 3, 5, 10];
 
@@ -16,5 +16,8 @@ const promisse = new Promise((resolve, reject) => {
   } else {
     reject();
   }
-})
-.then((arr) => console.log(arr)).catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'));
+});
+
+promise.then((arr) => arr)
+.then((arr2) => arr2.reduce((acc, curr) => acc + curr))
+.catch(() => console.log('É mais de oito mil! Essa promise deve estar quebrada!'));
