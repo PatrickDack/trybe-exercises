@@ -1,4 +1,5 @@
 const math = require('../souce/math');
+jest.mock('../souce/math');
 
 it('testa a função subtrair', () => {
   math.subtrair = jest.fn().mockReturnValue(5);
@@ -12,4 +13,12 @@ it('testa a função multtiplicar', () => {
   math.multiplicar();
   expect(math.multiplicar).toHaveBeenCalled();
   expect(math.multiplicar(2, 5)).toBe(10);
+});
+
+it('testa a funççao soma', () => {
+  math.somar.mockImplementation((a, b) => a + b);
+  math.somar(3, 2);
+  expect(math.somar(3, 2)).toBe(5);
+  expect(math.somar).toHaveBeenCalledTimes(2);
+  expect(math.somar).toHaveBeenCalledWith(3, 2);
 });
