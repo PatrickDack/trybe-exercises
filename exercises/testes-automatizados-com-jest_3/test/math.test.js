@@ -22,3 +22,11 @@ it('testa a funççao soma', () => {
   expect(math.somar).toHaveBeenCalledTimes(2);
   expect(math.somar).toHaveBeenCalledWith(3, 2);
 });
+
+it('testa a função dividir', () => {
+  math.dividir = jest.fn().mockReturnValue(15);
+  math.dividir(2, 5);
+  expect(math.dividir).toHaveBeenCalled();
+  expect(math.dividir(2, 5)).toBe(15);
+  expect(math.dividir).toHaveBeenCalledTimes(2);
+});
