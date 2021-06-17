@@ -15,6 +15,7 @@ it('testa random', () => {
 it('testa random com implementation', () => {
   const randomGen = jest.spyOn(random, 'generate');
   randomGen.mockImplementation((a, b) => a / b);
+
   randomGen();
   expect(randomGen).toHaveBeenCalled();
   expect(randomGen(10, 5)).toBe(2);
@@ -24,4 +25,23 @@ it('testa random com implementation', () => {
   randomGen.mockReturnValue(54);
   expect(randomGen()).toBe(54);
   expect(randomGen).toHaveBeenCalledTimes(1);
-})
+});
+
+it('testa random com mais implementations', () => {
+  const randomGen = jest.spyOn(random, 'generate');
+  randomGen.mockImplementation((a, b, c) => a * b * c);
+
+  randomGen();
+  expect(randomGen).toHaveBeenCalled();
+  expect(randomGen(2, 4, 6)).toBe(48);
+  expect(randomGen).toHaveBeenCalledWith(2, 4, 6);
+  expect(randomGen).toHaveBeenCalledTimes(2);
+
+  randomGen.mockRestore();
+  randomGen.mockImplementation((a) => 2 * a);
+  randomGen();
+  expect(randomGen).toHaveBeenCalled();
+  expect(randomGen(7)).toBe(14);
+  expect(randomGen).toHaveBeenCalledWith(7);
+  expect(randomGen).toHaveBeenCalledTimes(2);
+});
