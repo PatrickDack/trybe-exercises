@@ -53,6 +53,5 @@ describe('subtrair com restore', () => {
     expect(mathSub(30, 7)).toBe(23);
     expect(mathSub).toHaveBeenCalled();
     expect(mathSub).toHaveBeenCalledTimes(1)
-
   });
 });
