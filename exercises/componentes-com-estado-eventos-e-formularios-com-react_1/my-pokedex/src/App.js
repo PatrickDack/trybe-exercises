@@ -19,9 +19,11 @@ class App extends React.Component{
 
   handleClick() {
     this.setState((previous, _props) => ({
-      currentPokemon: previous.currentPokemon + 1
+      currentPokemon: previous.currentPokemon + 1,
     }));
-    console.log(this.state.currentPokemon);
+    if(this.state.currentPokemon === 8) {
+      this.setState({ currentPokemon: 0 });
+    }
   }
 
   render () {
