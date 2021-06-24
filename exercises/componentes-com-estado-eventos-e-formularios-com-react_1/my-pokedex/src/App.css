@@ -50,3 +50,11 @@ h1 {
 .poke-container:hover {
   box-shadow: 5px 5px darkred;
 }
+
+.next-btn {
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: darkgreen;
+  font-weight: 600;
+}

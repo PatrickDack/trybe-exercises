@@ -7,11 +7,11 @@ class Pokedex extends React.Component {
     return (
       <section className="container">
         {
-          poke.map(poke => <Pokemon key={poke.id} poke={poke}/>)
+          <Pokemon poke={poke}/>
         }
       </section>
     )
   }
 }
-
+// poke.map((poke) => <Pokemon key={poke.id} poke={poke}/>)
 export default Pokedex;
