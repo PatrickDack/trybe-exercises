@@ -1,4 +1,5 @@
 import React from 'react';
+import FileInput from './fileInput';
 
 class Form extends React.Component {
   constructor() {
@@ -9,7 +10,7 @@ class Form extends React.Component {
       email: '',
       favoriteAnime: '',
       coments: '',
-      willpresent: false,
+      isGoing: false,
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,16 +33,18 @@ class Form extends React.Component {
             Nome:
             <input name="name" type="text" value={this.state.name} onChange={this.handleChange} />
           </label>
-
+          <br />
           <label>
             E-mail:
             <input name="email" type="email" value={this.state.email} onChange={this.handleChange}/>
           </label>
+          <br />
 
           <label>
             Vai comparecer?
-            <input type="checkbox" name="willpresent" value={this.state.willpresent} onChange={this.handleChange} />
+            <input type="checkbox" name="isGoing" value={this.state.willpresent} onChange={this.handleChange} />
           </label>
+          <br />
 
           <label>
             Escolha seu anime favorito:
@@ -52,6 +55,9 @@ class Form extends React.Component {
             <option value="beaststars">BeastStars</option>
             </select>
           </label>
+          <br />
+
+          <FileInput />
 
           <label>
             Deixe um Comentário:
