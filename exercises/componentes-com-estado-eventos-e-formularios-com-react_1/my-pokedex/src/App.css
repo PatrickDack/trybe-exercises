@@ -57,4 +57,9 @@ h1 {
   color: white;
   background-color: darkgreen;
   font-weight: 600;
+  margin: 5px;
+}
+
+.button-container {
+  padding: 10px;
 }

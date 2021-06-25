@@ -12,6 +12,7 @@ class App extends React.Component{
 
     this.state = {
       currentPokemon: 0,
+      pokemonType: 'fire',
     }
 
     this.handleClick = this.handleClick.bind(this);
@@ -26,11 +27,19 @@ class App extends React.Component{
     }
   }
 
+  changeType(e) {
+    data.forEach((poke) => e.target.innerText === poke.type);
+  }
+
   render () {
     return (
       <main>
         <header><Title /></header>
         <Pokedex poke={data[this.state.currentPokemon]}/>
+        <div className="button-container">
+          <ButtonNext type="button" content="Fire" func={this.changeType}/>
+          <ButtonNext type="button" content="Psychic" func={() => console.log('xablau')}/>
+        </div>
         <ButtonNext type="button" content="Próximo Pokemon" func={this.handleClick}/>
       </main>
     );
