@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Form from './components/Form';
 import './App.css';
 import React from 'react';
