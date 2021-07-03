@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import './App.css';
 
@@ -7,9 +6,11 @@ class App extends React.Component {
     super(props);
 
     this.mountAplication = this.mountAplication.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 
     this.state = {
-      api: '',
+      user: undefined,
+      users: [],
       loading: true,
     }
   }
@@ -22,22 +23,32 @@ class App extends React.Component {
       const response = await requestReturn.json();
       this.setState({
         loading: false,
-        api: response.results[0],
+        user: response.results[0],
+        nextUser: response.results[0],
       });
     });
   }
 
+  handleClick() {
+    this.setState(({ user, users }) => ({
+      users: [...users, user]
+    }))
+    this.fetchUser();
+  }
+
   mountAplication() {
-    const { picture, email, dob: { age }, name } = this.state.api;
+    const { users } = this.state;
     return (
-      <div>
-        <h1>Random User</h1>
-        <div>
-          <img src={ picture.large } />
-          <p>Nome: { name.first } { name.last }</p>
-          <p>E-mail: { email }</p>
-          <p>Idade: { age }</p>
-        </div>
+      <div className="users">
+        {
+          users.map(({ id, picture, name, gender, email, dob: { age} }) => <div key={ email }>
+          <img src={ picture.large } alt={ id.value } />
+          <p>{ name.first } { name.last }</p>
+          <p>{ gender === 'male' ? 'Masculino' : 'Feminino' }</p>
+          <p>{ email }</p>
+          <p>{ age } Anos</p>
+        </div>)
+        }
       </div>
     )
   }
@@ -46,16 +57,23 @@ class App extends React.Component {
     this.fetchUser();
   }
 
+  // shouldComponentUpdate(prevProps, prevState) {
+  //   const maxAge = 50;
+  //   return prevState.user && prevState.user.dob.age <= maxAge;
+  // }
+
   render() {
     const loadindElement = <span>Loading...</span>
     const { loading } = this.state;
     return (
       <div>
-        <p>
-          {
-            loading ? loadindElement : this.mountAplication()
-          }
-        </p>
+        <h1>Random User</h1>
+        {
+          loading ? loadindElement : this.mountAplication()
+        }
+      <div>
+        <button type="button" onClick={ this.handleClick }>Adicionar</button>
+      </div>
       </div>
     )
   }
