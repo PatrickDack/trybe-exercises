@@ -31,10 +31,11 @@ class App extends React.Component {
         </h1>
         <div className="body">
           {
-            characters.map(({ name, image}) => {
+            characters.map(({ name, image, origin}) => {
               return (
                 <div className="container" key={name}>
                   <h3>{name}</h3>
+                  <p>{ origin.name }</p>
                   <img src={image} alt={name}/>
                 </div>
               )
