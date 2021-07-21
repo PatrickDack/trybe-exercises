@@ -1,13 +1,10 @@
 import React from 'react';
+import Profile from '../component/Profile';
 
 class Home extends React.Component {
   render() {
     return(
-      <>
-        <main>
-          <h1>Patrick Dack</h1>
-        </main>
-      </>
+      <Profile />
     );
   }
 }
