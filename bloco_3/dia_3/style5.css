@@ -1,0 +1,46 @@
+ol {
+    color: yellow;
+    
+}
+
+a {
+    list-style: none;
+    color: currentColor;
+}
+
+.par {
+    color: green;
+}
+
+.primo {
+    text-transform: uppercase;
+}
+
+.header {
+    color: red;
+}
+
+.ita {
+    font-size: 40px;
+    -webkit-text-stroke: 1px black;
+}
+
+li {
+    font-size: 20px;
+}
+
+.it {
+    font-weight: 600;
+}
+
+.pl {
+    color: blue;
+}
+
+.java {
+    background-color: palevioletred;
+}
+
+div:hover {
+    font-weight: 600;
+}
