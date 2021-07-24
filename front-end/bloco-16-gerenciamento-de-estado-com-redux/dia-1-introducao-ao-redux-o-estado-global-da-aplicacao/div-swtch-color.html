@@ -38,7 +38,14 @@
         index: 0,
       };
 
-      const store = createStore();
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          default:
+            return state;
+        }
+      };
+
+      const store = createStore(reducer);
     </script>
   </body>
 </html>
