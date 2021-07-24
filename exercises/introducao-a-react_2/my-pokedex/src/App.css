@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: darkorange;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 60px;
+  color: white;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+.poke-container {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(233, 233, 233);
+  border-radius: 5%;
+  width: 45%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.poke-info {
+  text-align: center;
+}
+
+.poke-container:hover {
+  box-shadow: 5px 5px darkred;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .poke-container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+  }
+}
