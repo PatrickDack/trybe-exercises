@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let hText = document.createElement('h1');
+      document.body.appendChild(hText);
+      hText.innerHTML = ('Exercício 5.2 - JavaScript DOM');
+      hText.className = 'title';
+
+      let div = document.createElement('div');
+      document.body.appendChild(div);
+      div.className = 'main-content';
+      
+      let div2 = document.createElement('div');
+      document.querySelector('div').appendChild(div2);
+      div2.className = 'center-content';
+
+      let textParagraph = document.createElement('p');
+      document.querySelector('.center-content').appendChild(textParagraph);
+      textParagraph.innerHTML = "Em linguística, a noção de texto é ampla e ainda aberta a uma definição mais precisa. Grosso modo, pode ser entendido como manifestação linguística das ideias de um autor, que serão interpretadas pelo leitor de acordo com seus conhecimentos linguísticos e culturais. Seu tamanho é variável. Em linguística, a noção de texto é ampla e ainda aberta a uma definição mais precisa. Grosso modo, pode ser entendido como manifestação linguística das ideias de um autor, que serão interpretadas pelo leitor de acordo com seus conhecimentos linguísticos e culturais. Seu tamanho é variável."
+
+      let divLeft = document.createElement('div');
+      document.querySelector('.main-content').appendChild(divLeft);
+      divLeft.className = 'left-content';
+
+      let divRight = document.createElement('div');
+      document.querySelector('.main-content').appendChild(divRight);
+      divRight.className = 'right-content';
+
+      let imgLeft = document.createElement('img');
+      document.querySelector('.left-content').appendChild(imgLeft);
+      imgLeft.className = 'small-image';
+      imgLeft.src = 'https://picsum.photos/200';
+
+      let unorderedList = document.createElement('ul');
+      document.querySelector('.right-content').appendChild(unorderedList);
+
+      let numberStringList = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      
+      for (let index = 0; index < numberStringList.length; index += 1) {
+        let itemList = document.createElement('li');
+        itemList.innerHTML = numberStringList[index];
+        document.querySelector('ul').appendChild(itemList);
+      }
+
+      for (let index = 0; index < 3; index += 1) {
+        let h3Tag = document.createElement('h3');    
+        let h3Tag1 = h3Tag2 = h3Tag;
+        document.querySelector('.main-content').appendChild(h3Tag);
+        h3Tag.className = 'description';
+        document.querySelector('.main-content').appendChild(h3Tag1);
+        h3Tag1.className = 'description';
+        document.querySelector('.main-content').appendChild(h3Tag2);
+        h3Tag2.className = 'description';
+      }
+
+      document.querySelector('.main-content').removeChild(divLeft);
+    </script>
+  </body>
+</html>
