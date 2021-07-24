@@ -54,7 +54,7 @@
           case 'ALTERAR_SEGUNDO_NOME_E_SOBRENOME':
             return {
               ...state,
-              nome: action.name,
+              nome: action.nome,
               sobrenome: action.sobrenome,
             }
           default:
@@ -62,9 +62,33 @@
         }
       };
 
-      const rootReducer = Redux.combibeReducers({ meuPrimeiroReducer, meuSegundoReducer});
+      const rootReducer = Redux.combineReducers({ meuPrimeiroReducer, meuSegundoReducer });
 
       const store = Redux.createStore(rootReducer);
+
+    window.onload = () => {
+      setTimeout(() => {
+        store.dispatch({
+          type: 'ALTERAR_PRIMEIRO_NOME_E_SOBRENOME',
+          nome: 'Patrick',
+          sobrenome: 'Dack Figueiredo Santos',
+        });
+        store.dispatch({
+            type: 'ALTERAR_SEGUNDO_NOME_E_SOBRENOME',
+            nome: 'Maria',
+            sobrenome: 'Aparecida Figueiredo Santos',
+          });
+      }, 2000);
+    };
+
+    store.subscribe(() => {
+      const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+      document.getElementById('nome-1').innerHTML = meuPrimeiroReducer.nome;
+      document.getElementById('sobrenome-1').innerHTML = meuPrimeiroReducer.sobrenome;
+
+      document.getElementById('nome-2').innerHTML = meuSegundoReducer.nome;
+      document.getElementById('sobrenome-2').innerHTML = meuSegundoReducer.sobrenome;
+    });
     </script>
   </body>
 </html>
