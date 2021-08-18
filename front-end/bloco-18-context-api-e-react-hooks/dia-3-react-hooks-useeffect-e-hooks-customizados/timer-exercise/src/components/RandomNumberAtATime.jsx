@@ -19,8 +19,17 @@ function RandomNumberAtATime() {
     }, 10000)
   }
 
+  const fizzBuzz = (number) => {
+    if(number % 3 === 0 || number % 5 === 0) {
+      return <h2>Acerto</h2>
+    }
+  }
+
   return(
-    <h1>{ randomNumber }</h1>
+    <>
+      <h1>{ randomNumber }</h1>
+      {fizzBuzz(randomNumber)}
+    </>
   );
 }
 
