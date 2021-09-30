@@ -8,9 +8,11 @@ const RandomNumber = () => {
 function RandomNumberAtATime() {
 
   const [randomNumber, setRandomNumber] = useState(RandomNumber());
+  const [hit, setHit] = useState(false);
 
   useEffect(() => {
     randomTimer();
+    fizzBuzz(randomNumber);
   },[randomNumber]);
 
   const randomTimer = () => {
@@ -21,14 +23,19 @@ function RandomNumberAtATime() {
 
   const fizzBuzz = (number) => {
     if(number % 3 === 0 || number % 5 === 0) {
-      return <h2>Acerto</h2>
+      setHit(true);
+      setTimeout(() => {
+        setHit(false);
+      }, 4000);
     }
   }
 
   return(
     <>
       <h1>{ randomNumber }</h1>
-      {fizzBuzz(randomNumber)}
+      {
+        hit && <h1>Acerto</h1>
+      }
     </>
   );
 }
