@@ -1,6 +1,6 @@
 const { question, keyInSelect } = require('readline-sync');
 
-const scripts = ['imc', 'sorteio', 'velocidade', 'fatorial'];
+const scripts = ['imc', 'sorteio', 'velocidade', 'fatorial', 'fibonacci'];
 
 const response = keyInSelect(scripts, 'Qual script deve ser executado? ');
 
