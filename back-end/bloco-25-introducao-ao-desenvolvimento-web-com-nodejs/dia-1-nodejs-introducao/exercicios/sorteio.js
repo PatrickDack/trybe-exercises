@@ -19,3 +19,5 @@ const  prizeDraw = () => {
 };
 
 prizeDraw();
+
+module.exports = prizeDraw;
