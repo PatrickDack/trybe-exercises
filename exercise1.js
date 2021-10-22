@@ -12,6 +12,4 @@ const main = (num1, num2, num3) => {
     });
 };
 
-main(21, 22, 30)
-  .then(resolve => console.log(resolve))
-  .catch(reject => console.log(reject));
+module.exports = main;
