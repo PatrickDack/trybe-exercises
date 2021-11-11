@@ -2,7 +2,7 @@ const express = require('express');
 const { json } = require('body-parser');
 const { getAll, getById } = require('./modelsMongoDB/Author');
 const { getAllBooks, getByAuthorId, isValid, create } = require('./modelsMongoDB/Book');
-const { createUser,  validUser, getAllUsers } = require('./modelsMongoDB/user');
+const { createUser,  validUser, getAllUsers, getUserById } = require('./modelsMongoDB/user');
 
 const app = express();
 
@@ -25,6 +25,15 @@ app.post('/user', async (req, res, _next) => {
 
   res.status(201).json({ message: 'Usuário criado com sucesso.' });
 });
+
+app.get('/user/:id', async (req, res, _next) => {
+  const { id } = req.params;
+
+  const user = await getUserById(id);
+  if (!user) return res.status(404).json({ error: true, message: 'Usuário não encontrado.' });
+
+  return res.status(200).json(user);
+})
 
 app.get('/authors', async (req, res, next) => {
   const authors = await getAll();
