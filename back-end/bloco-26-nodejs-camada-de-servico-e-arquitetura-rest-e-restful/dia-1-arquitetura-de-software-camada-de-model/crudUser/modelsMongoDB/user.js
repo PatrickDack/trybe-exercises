@@ -26,6 +26,18 @@ const createUser = async (firstName, lastName, email, password) => {
     .then((db) => db.collection('user').insertOne({ firstName, lastName, email, password }));
 }
 
+const updateUser = async (id, firstName, lastName, email, password) => {
+  if (!ObjectId.isValid(id)) return null;
+
+  const updatedUser = await connection()
+    .then((db) => db.collection('user')
+    .findOneAndUpdate({ _id: new ObjectId(id) }, { $set: { firstName, lastName, email, password } }))
+    .then((result) => result.value);
+  if (!updatedUser) return null;
+
+  return updatedUser;
+}
+
 const getAllUsers = async () => {
   return await connection()
     .then((db) => db.collection('user').find().toArray())
@@ -36,4 +48,5 @@ module.exports = {
   createUser,
   getAllUsers,
   getUserById,
+  updateUser,
 };

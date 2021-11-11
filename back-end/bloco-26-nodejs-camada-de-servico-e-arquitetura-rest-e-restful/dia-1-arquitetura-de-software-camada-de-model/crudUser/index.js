@@ -2,7 +2,8 @@ const express = require('express');
 const { json } = require('body-parser');
 const { getAll, getById } = require('./modelsMongoDB/Author');
 const { getAllBooks, getByAuthorId, isValid, create } = require('./modelsMongoDB/Book');
-const { createUser,  validUser, getAllUsers, getUserById } = require('./modelsMongoDB/user');
+const { createUser,  validUser, getAllUsers, getUserById, updateUser } = require('./modelsMongoDB/user');
+const e = require('express');
 
 const app = express();
 
@@ -34,6 +35,19 @@ app.get('/user/:id', async (req, res, _next) => {
 
   return res.status(200).json(user);
 })
+
+app.put('/user/:id', async (req, res, _next) => {
+  const { id } = req.params;
+  const { firstName, lastName, email, password } = req.body;
+
+  const resolve = validUser(firstName, lastName, email, password);
+  if (resolve.error) return res.status(401).json(resolve.message);
+
+  const updatedUser = await updateUser(id, firstName, lastName, email, password);
+  if(!updatedUser) return res.status(404).json({ message: 'Usuário não encontrado.'});
+
+  return res.status(200).json(updatedUser);
+});
 
 app.get('/authors', async (req, res, next) => {
   const authors = await getAll();
