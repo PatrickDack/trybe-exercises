@@ -2,20 +2,28 @@ const express = require('express');
 const { json } = require('body-parser');
 const { getAll, getById } = require('./modelsMongoDB/Author');
 const { getAllBooks, getByAuthorId, isValid, create } = require('./modelsMongoDB/Book');
-const { createUser,  validUser } = require('./modelsMongoDB/user');
+const { createUser,  validUser, getAllUsers } = require('./modelsMongoDB/user');
 
 const app = express();
 
 app.use(json());
 
+app.get('/user', async (_req, res, _next) => {
+  const users = await getAllUsers();
+
+  res.status(200).json(users);
+})
+
 app.post('/user', async (req, res, _next) => {
   const { firstName, lastName, email, password } = req.body;
 
-  validUser(firstName, lastName, email, password, res);
+  const resolve = validUser(firstName, lastName, email, password);
+
+  if (resolve.error) return res.status(401).json(resolve.message);
 
   await createUser(firstName, lastName, email, password);
 
-  res.status(201).json({ error: false, message: 'Usuário criado com sucesso.'});
+  res.status(201).json({ message: 'Usuário criado com sucesso.' });
 });
 
 app.get('/authors', async (req, res, next) => {
