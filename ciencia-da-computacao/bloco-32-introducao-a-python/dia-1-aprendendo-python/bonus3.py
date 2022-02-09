@@ -1,4 +1,4 @@
-def gaus_sum(n):
+def gauss_sum(n):
     total = 0
     for i in range(1, n + 1):
         total += i
@@ -6,4 +6,4 @@ def gaus_sum(n):
     print(total)
 
 
-gaus_sum(10)
+gauss_sum(10)
