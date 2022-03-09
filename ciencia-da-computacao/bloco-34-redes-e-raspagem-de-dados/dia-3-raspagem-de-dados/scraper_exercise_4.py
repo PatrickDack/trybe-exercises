@@ -19,4 +19,6 @@ if description.endswith(suffix):
 
 image = URL_BASE + selector.css(".item img::attr(src)").get()
 
-print(title, price, description, image, sep=",")
+availability = selector.css(".product_main .availability::text").re_first("\d")
+
+print(title, price, description, image, availability, sep=",")
